@@ -1,46 +1,79 @@
-def sort_alg(input_list, strnum):
-    if strnum > 3:
+"""def max_sort(inp, n):
+    if n > 4:
         return []
-    if len(input_list) <= 1:
-        return input_list
+    if len(inp) == 0:
+        return []
+    if len(inp) == 1:
+        return inp
+
 
     tmp = []
-    for i in range(10):
-        tmp1 = []
-        for string in input_list:
-            if len(string) > strnum:
-                if string[strnum] == str(i):
-                    tmp1.append(string)
-        tmp.append(tmp1)
-
-    if strnum > 0:
-        tmp1 = []
-        for string in input_list:
-            if len(string) == strnum:
-                tmp1.append(string)
-
-        tmp.insert(int(string[strnum - 1]), tmp1)
-
-    answer_list = []
 
     for i in range(10):
-        answer_list += sort_alg(tmp[i], strnum + 1)
+        tmp1 = []
 
-    return answer_list
+        for st in inp:
+            if len(st) >= n:
+
+                if st[n - 1] == str(i):
+                    tmp1.append(st)
+        a = max_sort(tmp1, n + 1)
+        if a:
+            tmp.append(a)
+
+    tmp1 = []
+    for st in inp:
+        if len(st) == n - 1: tmp1.append(st)
+
+    if tmp1:
+        if int(tmp1[0][n-2]) <= 0:
+            tmp.insert(int(tmp1[0][n-2])+1, tmp1)
+        else:
+            tmp.insert(int(tmp1[0][n - 2]), tmp1)
+
+    return tmp
+
+def solution(numbers):
+
+    numbers = list(map(lambda st: str(st), numbers))
+
+    a= max_sort(numbers, 1)
+    print(a)"""
 
 
 def solution(numbers):
-    answer = ""
 
-    numbers = list(map(lambda x: str(x), numbers))
+    li = list(
+        map(
+            lambda x: (int(str(x) + (str(x)[len(str(x)) - 1]) * (4 - len(str(x)))), str(x)),
+            numbers,
+        )
+    )
 
-    words = sort_alg(numbers, 0)
-    words.reverse()
+    print(li)
 
-    for word in words:
-        answer += word
+    ans = ''
 
-    return answer
+    for n in range(len(li)):
+
+        max = list(li[0])
+
+        for x in li:
+            #print(x)
+            if max[0] <= x[0]:
+                if max[1] > x[1]:
+                    max = list(x)
+
+        ans += max[1]
+
+        print(f'max:{max}, list:{li}')
+        del li[li.index(max)]
 
 
-solution([3, 30, 34, 5, 9])
+    print(ans)
+
+
+
+
+
+solution([1, 10, 100, 1000, 818, 81, 898, 89, 0, 0])
