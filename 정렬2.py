@@ -63,8 +63,3 @@ def solution(numbers):
 
     return answer
 
-
-
-
-
-solution([0, 0, 0, 0, 00, 0])
