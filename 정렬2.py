@@ -42,38 +42,29 @@ def solution(numbers):
 
 
 def solution(numbers):
-
-    li = list(
-        map(
-            lambda x: (int(str(x) + (str(x)[len(str(x)) - 1]) * (4 - len(str(x)))), str(x)),
-            numbers,
+    answer = ""
+    numbers.sort(
+            key = lambda x: (str(x)*4)[0:4],
+            reverse=  True
         )
+    numbers = list(
+        map(lambda x: str(x),
+            numbers
+            )
     )
 
-    print(li)
+    print(numbers)
 
-    ans = ''
+    answer = ''.join(numbers)
+    print(answer)
 
-    for n in range(len(li)):
+    if int(answer) == 0:
+        answer = '0'
 
-        max = list(li[0])
-
-        for x in li:
-            #print(x)
-            if max[0] <= x[0]:
-                if max[1] > x[1]:
-                    max = list(x)
-
-        ans += max[1]
-
-        print(f'max:{max}, list:{li}')
-        del li[li.index(max)]
-
-
-    print(ans)
+    return answer
 
 
 
 
 
-solution([1, 10, 100, 1000, 818, 81, 898, 89, 0, 0])
+solution([0, 0, 0, 0, 00, 0])
