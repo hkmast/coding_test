@@ -2,7 +2,7 @@
 
 # 풀이1
 # 효율성 떨어짐
-# 예상 시간 복잡도 log n^2~3
+# 예상 시간 복잡도 O(log n^2~3)
 '''
 def solution(participants, completions):
     answer = ''
@@ -14,6 +14,9 @@ def solution(participants, completions):
 
     return answer
 '''
+
+# 효율성 테스트 통과
+# O(log n)
 def solution(participants, completions):
 
     participants_dict = dict()
@@ -30,8 +33,8 @@ def solution(participants, completions):
         else:
             completions_dict[completion] += 1
 
-    print(participants_dict)
-    print(completions_dict)
+    # print(participants_dict)
+    # print(completions_dict)
 
     for completion in completions_dict:
 
