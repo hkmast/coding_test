@@ -1,3 +1,4 @@
+# https://school.programmers.co.kr/learn/courses/30/lessons/42586
 import math
 def solution(progresses, speeds):
     answer = []
@@ -20,5 +21,3 @@ def solution(progresses, speeds):
     if q: answer.append(len(q))
 
     return answer
-
-print(solution([95, 90, 99, 99, 80, 99], [1, 1, 1, 1, 1, 1]))

@@ -16,5 +16,3 @@ def solution(s):
         return False
 
     return True
-
-print(solution("(()("))
