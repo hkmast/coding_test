@@ -5,6 +5,7 @@ def solution(arr):
     for char in arr:
         if char != answer[-1]:
             answer.append(char)
-        else: pass
+        else:
+            pass
 
     return answer

@@ -3,9 +3,9 @@ def solution(priorities, location):
 
     answer = 0
 
-    priorities = [(priorities[x], x==location) for x in range(len(priorities))]
+    priorities = [(priorities[x], x == location) for x in range(len(priorities))]
 
-    #print(priorities)
+    # print(priorities)
 
     cnt = 0
 
@@ -17,15 +17,17 @@ def solution(priorities, location):
                 priorities.append(tmp)
             else:
                 cnt += 1
-                if tmp[1]: break
+                if tmp[1]:
+                    break
 
         else:
             cnt += 1
-            if tmp[1]: break
+            if tmp[1]:
+                break
 
     answer = cnt
 
     return answer
 
 
-print(solution([1, 1, 9, 1, 1, 1],0))
+print(solution([1, 1, 9, 1, 1, 1], 0))
